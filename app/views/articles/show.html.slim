@@ -1,0 +1,15 @@
+h2 Detalles del article
+
+.show
+  dl
+  
+    dt Name:
+    dd = @article.name
+  
+    dt Price:
+    dd = @article.price
+  
+
+= link_to 'Editar', edit_article_path(@article), :class => 'edit_button'
+= link_to 'Volver', articles_path, :class => 'back_button'
+

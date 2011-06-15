@@ -1,0 +1,21 @@
+.contextual
+  = link_to 'Nuevo Article', new_article_path, :class => 'new_btn'
+
+h1 articles
+
+table
+  thead
+    tr
+      th Name
+      th Price
+      th
+  tbody
+    - @articles.each do |article|
+      tr
+        td= article.name
+        td= article.price
+        td.actions
+          = link_to 'Ver', article
+          = link_to 'Editar', edit_article_path(article)
+          = link_to 'Eliminar', article, :confirm => 'Está seguro ?', :method => :delete
+

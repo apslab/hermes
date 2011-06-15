@@ -11,13 +11,13 @@ table
   <% end -%>
     th
   tbody
-    - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
-      tr
-      <% for attribute in attributes -%>
-        td= <%= singular_table_name %>.<%= attribute.name %>
-      <% end -%>
-        td.actions
-          = link_to 'Ver', <%= singular_table_name %>
-          = link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-          = link_to 'Eliminar', <%= singular_table_name %>, :confirm => 'Está seguro ?', :method => :delete
+  - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+    tr
+    <% for attribute in attributes -%>
+      td= <%= singular_table_name %>.<%= attribute.name %>
+    <% end -%>
+      td.actions
+        = link_to 'Ver', <%= singular_table_name %>
+        = link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+        = link_to 'Eliminar', <%= singular_table_name %>, :confirm => 'Está seguro ?', :method => :delete
 
