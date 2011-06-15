@@ -33,6 +33,10 @@ gem 'sqlite3'
 # end
 
 gem 'jquery-rails'
+gem 'slim'
+gem "slim-rails"
+gem 'formtastic', '~> 1.2.3'
+
 
 group :development, :test do
   gem 'rspec-rails'
