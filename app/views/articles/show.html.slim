@@ -1,15 +1,14 @@
-h2 Detalles del article
+h2 = "#{t('actions.titles.show')} #{Article.human_name}"
 
 .show
   dl
   
-    dt Name:
+    dt = Article.human_attribute_name('name')
     dd = @article.name
   
-    dt Price:
+    dt = Article.human_attribute_name('price')
     dd = @article.price
   
-
 = link_to 'Editar', edit_article_path(@article), :class => 'edit_button'
 = link_to 'Volver', articles_path, :class => 'back_button'
 

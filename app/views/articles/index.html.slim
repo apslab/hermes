@@ -1,21 +1,21 @@
 .contextual
-  = link_to 'Nuevo Article', new_article_path, :class => 'new_btn'
-
-h1 articles
+  = link_to "#{t('actions.titles.new')} #{Article.human_name}", new_article_path, :class => 'new_btn'
+  
+h1 = Article.human_name.pluralize.camelize
 
 table
   thead
     tr
-      th Name
-      th Price
+      th = Article.human_attribute_name('name')
+      th = Article.human_attribute_name('price')
       th
   tbody
-    - @articles.each do |article|
-      tr
-        td= article.name
-        td= article.price
-        td.actions
-          = link_to 'Ver', article
-          = link_to 'Editar', edit_article_path(article)
-          = link_to 'Eliminar', article, :confirm => 'Está seguro ?', :method => :delete
+  - @articles.each do |article|
+    tr
+      td= article.name
+      td= article.price
+      td.actions
+        = link_to t('actions.links.show'), article
+        = link_to t('actions.links.edit'), edit_article_path(article)
+        = link_to t('actions.links.delete'), article, :confirm => t('actions.links.delete_confirm'), :method => :delete
 

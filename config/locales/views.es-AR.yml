@@ -1,0 +1,17 @@
+"es-AR":
+  actions:
+    titles:
+      new: 'Nuevo'
+      show: 'Detalles del '
+    links:
+      back: 'Volver'
+      show: 'Ver'
+      edit: 'Editar'
+      delete: 'Eliminar'
+      delete_confirm: 'Está seguro ?'
+
+  formtastic:
+    actions:
+      create: "Crear mi %{model}"
+      update: "Guardar cambios"
+

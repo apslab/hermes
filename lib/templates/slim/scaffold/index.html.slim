@@ -1,23 +1,23 @@
 .contextual
-  = link_to 'Nuevo <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'new_btn'
-
-h1 <%= plural_table_name %>
+  = link_to "#{t('actions.titles.new')} #{<%= class_name %>.human_name}", new_<%= singular_table_name %>_path, :class => 'new_btn'
+  
+h1 = <%= class_name %>.human_name.pluralize.camelize
 
 table
   thead
     tr
   <% for attribute in attributes -%>
-    th <%= attribute.human_name %>
+    th = <%= class_name %>.human_attribute_name('<%= attribute.name %>')
   <% end -%>
     th
   tbody
   - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
     tr
-    <% for attribute in attributes -%>
+<% for attribute in attributes -%>
       td= <%= singular_table_name %>.<%= attribute.name %>
-    <% end -%>
+<% end -%>
       td.actions
-        = link_to 'Ver', <%= singular_table_name %>
-        = link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-        = link_to 'Eliminar', <%= singular_table_name %>, :confirm => 'Está seguro ?', :method => :delete
+        = link_to t('actions.links.show'), <%= singular_table_name %>
+        = link_to t('actions.links.edit'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+        = link_to t('actions.links.delete'), <%= singular_table_name %>, :confirm => t('actions.links.delete_confirm'), :method => :delete
 

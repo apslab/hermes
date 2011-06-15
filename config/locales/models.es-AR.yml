@@ -1,0 +1,8 @@
+"es-AR":
+  activerecord:
+    models:
+      article: "artículo"
+    attributes:
+      article:
+        name: "nombre"
+        price: "precio"
