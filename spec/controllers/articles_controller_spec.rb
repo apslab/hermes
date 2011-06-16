@@ -24,7 +24,7 @@ describe ArticlesController do
   # Article. As you add validations to Article, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    { :name => 'rufuras', :price => 10.20 }
   end
 
   describe "GET index" do
