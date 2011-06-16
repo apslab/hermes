@@ -1,6 +1,6 @@
-h1 Editar article
+h1 = "#{t('actions.titles.edit')} #{Article.model_name.human}"
 
 == render 'form'
 
-= link_to 'Cancelar y volver', articles_path, :class => 'back_button'
+= link_to t('actions.links.cancel_and_back'), articles_path, :class => 'back_button'
 

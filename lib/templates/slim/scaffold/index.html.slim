@@ -1,7 +1,7 @@
 .contextual
-  = link_to "#{t('actions.titles.new')} #{<%= class_name %>.human_name}", new_<%= singular_table_name %>_path, :class => 'new_btn'
+  = link_to "#{t('actions.titles.new')} #{<%= class_name %>.model_name.human}", new_<%= singular_table_name %>_path, :class => 'new_btn'
   
-h1 = <%= class_name %>.human_name.pluralize.camelize
+h1 = <%= class_name %>.model_name.human.pluralize.camelize
 
 table
   thead

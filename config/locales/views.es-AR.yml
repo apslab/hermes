@@ -3,12 +3,14 @@
     titles:
       new: 'Nuevo'
       show: 'Detalles del '
+      edit: 'Editar'
     links:
       back: 'Volver'
       show: 'Ver'
       edit: 'Editar'
       delete: 'Eliminar'
       delete_confirm: 'Está seguro ?'
+      cancel_and_back: 'Cancelar y volver'
 
   formtastic:
     actions:

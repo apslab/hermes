@@ -1,11 +1,11 @@
-h2 = "#{t('actions.titles.show')} #{<%= class_name %>.human_name}"
+h1 = "#{t('actions.titles.show')} #{<%= class_name %>.human_name}"
 
 .show
   dl
-  <% for attribute in attributes %>
+  <%- for attribute in attributes -%>
     dt = <%= class_name %>.human_attribute_name('<%= attribute.name %>')
     dd = @<%= singular_table_name %>.<%= attribute.name %>
-  <% end %>
-= link_to 'Editar', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => 'edit_button'
-= link_to 'Volver', <%= index_helper %>_path, :class => 'back_button'
-
+  <%- end -%>
+  
+= link_to t('actions.links.edit'), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => 'edit_button'
+= link_to t('actions.links.back'), <%= index_helper %>_path, :class => 'back_button'

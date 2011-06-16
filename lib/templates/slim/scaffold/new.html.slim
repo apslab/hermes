@@ -1,6 +1,6 @@
-h1 = "#{t('actions.titles.new')} #{<%= class_name %>.human_name}"
+h1 = "#{t('actions.titles.new')} #{<%= class_name %>.model_name.human}"
 
 == render 'form'
 
-= link_to 'Volver', <%= index_helper %>_path, :class => 'back_button'
+= link_to t('actions.links.back'), <%= index_helper %>_path, :class => 'back_button'
 
