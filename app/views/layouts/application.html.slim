@@ -1,0 +1,11 @@
+! doctype html
+html
+  head
+    title Hermes
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  body
+    = render 'layouts/notification_area'
+    = yield
+

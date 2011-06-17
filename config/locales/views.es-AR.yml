@@ -1,4 +1,7 @@
 "es-AR":
+  articles:
+    show:
+      title: 'Detalles del artículo'
   actions:
     titles:
       new: 'Nuevo'
@@ -11,9 +14,15 @@
       delete: 'Eliminar'
       delete_confirm: 'Está seguro ?'
       cancel_and_back: 'Cancelar y volver'
+    create:
+      success: '%{model} creado!'
+    update:
+      success: '%{model} actualizado!'
+    destroy:
+      success: '%{model} eliminado!'
 
   formtastic:
     actions:
-      create: "Crear mi %{model}"
+      create: "Crear %{model}"
       update: "Guardar cambios"
 

@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   def index
 #		@search = Article.search(params[:search])
 #		@articles = @search.paginate(:page => params[:page], :per_page => 15)
-    @articles = Article.all 
+    @articles = Article.all
     respond_with(@articles)
   end
 
@@ -39,21 +39,21 @@ class ArticlesController < ApplicationController
   # POST /articles.xml
   def create
     @article = Article.new(params[:article])
-    flash[:notice] = 'Se guardó el nuevo Article.' if @article.save
+    flash[:notice] = t('actions.create.success', Article.model_name.human) if @article.save
     respond_with(@article)
   end
 
   # PUT /articles/1
   # PUT /articles/1.xml
   def update
-    flash[:notice] = 'Se actualizó el Article.' if @article.update_attributes(params[:article])
+    flash[:notice] = t('actions.update.success', Article.human_name) if @article.update_attributes(params[:article])
     respond_with(@article)
   end
 
   # DELETE /articles/1
   # DELETE /articles/1.xml
   def destroy
-    flash[:notice] = 'Se eliminó el Article.' if @article.destroy
+    flash[:notice] = t('actions.destroy.success', Article.human_name) if @article.destroy
     respond_with(@article)
   end
 
